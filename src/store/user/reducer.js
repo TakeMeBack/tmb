@@ -1,8 +1,8 @@
-import actions from '../actions'
+import XNS from '../XNS'
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case actions.FETCH_USER_FULFILLED:
+    case XNS.FETCH_USER_FULFILLED:
       return {
         ...state,
         // `login` is the username
