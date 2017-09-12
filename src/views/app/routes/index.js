@@ -9,33 +9,31 @@ import {
   ROUTE_CONTACT,
   ROUTE_ADMIN,
 } from '../../../store/route/actions';
-import XNS from '../../../store/XNS';
 
 import Home from './home';
+import Episodes from './episodes';
+import Blog from './blog';
+import Contact from './contact';
+import Admin from './admin';
 import About from './about';
 
 const routesMap = {
   "ROUTE_HOME": Home,
-  // [ROUTE_EPISODES]: Episodes,
-  // [ROUTE_BLOG]: Blog,
+  "ROUTE_EPISODES": Episodes,
+  "ROUTE_BLOG": Blog,
   "ROUTE_ABOUT": About,
-  // [ROUTE_CONTACT]: Contact,
-  // [ROUTE_ADMIN]: Admin,
+  "ROUTE_CONTACT": Contact,
+  "ROUTE_ADMIN": Admin,
   [NOT_FOUND]: Home
-}
+};
 
 
 const stateToProps = state => ({
   route: state.location.type,
 })
 
-const Container = (props) => {
-  console.log('props:',props);
-  console.log('route:',props.route, routesMap[props.route]);
-  // const Route = routesMap[route] || routesMap[NOT_FOUND];
-  const Route = routesMap[props.route]
-    ? routesMap[props.route]
-    : routesMap[NOT_FOUND]
+const Container = ({route}) => {
+  const Route = routesMap[route] || routesMap[NOT_FOUND];
   return (
     <Route />
   )

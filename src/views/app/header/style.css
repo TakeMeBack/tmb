@@ -1,11 +1,13 @@
 .header {
   height: 100px;
+  border: 1px solid black;
+}
+
+.links {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-
 }
 
 .link {
