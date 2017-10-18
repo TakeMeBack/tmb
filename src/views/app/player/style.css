@@ -1,4 +1,13 @@
+.player .disable {
+  opacity: 0;
+}
+
 .player {
+  transition: opacity 2s;
   display: flex;
   flex-direction: row;
+}
+
+.playgray {
+  color: gray;
 }

@@ -1,4 +1,4 @@
-import actions from './actions';
+// import actions from './actions';
 
 export default action$ => action$
   .filter(action => action.type === 'PING')

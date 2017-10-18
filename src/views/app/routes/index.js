@@ -1,14 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {NOT_FOUND} from 'redux-first-router';
-// import {
-//   ROUTE_HOME,
-//   ROUTE_EPISODES,
-//   ROUTE_BLOG,
-//   ROUTE_ABOUT,
-//   ROUTE_CONTACT,
-//   ROUTE_ADMIN,
-// } from '../../../store/route/actions';
 
 import Home from './home';
 import Episodes from './episodes';

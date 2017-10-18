@@ -17,10 +17,7 @@ class App extends Component {
         <div>
           <div className="App_content">
             <Header />
-            <button onClick={()=>console.log(this.props)}>props</button>
-            <button onClick={this.props.makePing.bind(this)}>
-              {this.props.ping.isPinging? "PONG" : "PING"}
-            </button>
+            {/* <button onClick={()=>console.log(this.props)}>props</button> */}
             <Routes/>
           </div>
         </div>
@@ -33,15 +30,10 @@ class App extends Component {
 const stateToProps = state => state;
 
 const dispatchToProps = dispatch => {
-  // console.log(PING, PONG);
    return {
      makePing: () => {dispatch(PING)},
      makePong: () => {dispatch(PONG)},
    }
 }
-//   {
-//   ping: ()=>dispatch(PING()),
-//   pong: ()=>dispatch(PONG()),
-// })};
 
 export default connect(stateToProps, dispatchToProps)(App);

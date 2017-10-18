@@ -14,7 +14,7 @@ class Player extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.isPlaying !== this.props.isPlaying) {
       if (nextProps.isPlaying){
-        this.audio.play();
+        setTimeout(()=> this.audio.play(), 0);
         this._anim=this.animate();
       } else {
         this.audio.pause();
@@ -37,20 +37,19 @@ class Player extends Component {
 
   render() {
     return (
-      <div className="player">
-        <button className="reverse">reverse</button>
+      <div className={this.props.src ? "player" : "player disable"}>
+        {/* <button className="reverse">reverse</button> */}
         <button className="play" onClick={this.togglePlay.bind(this)}>
           {this.props.isPlaying ? "pause" : "play"}
         </button>
         <div className="info">
-          runtime
           <input type="range" min="0" max="100" 
             value={this.state.percentPlayed}
             onChange={e=>this.timeTravel(e)}/>
         </div>
         <audio ref="audio" src={this.props.src}></audio>
-        <button className="">volume</button>
-        <button className="fforward">fforward</button>        
+        {/* <button className="">volume</button> */}
+        {/* <button className="fforward">fforward</button>         */}
       </div>
     );
   }

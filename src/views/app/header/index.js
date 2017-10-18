@@ -13,7 +13,9 @@ export default props => {
         <Link to="/about" className="link">ABOUT</Link>
         <Link to="/contact" className="link">CONTACT</Link>
       </div>
-      <Player />
+      <div className="player">
+        <Player />
+      </div>
     </div>
   )
 }

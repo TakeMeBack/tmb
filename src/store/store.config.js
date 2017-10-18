@@ -9,7 +9,7 @@ const epicMiddleware = createEpicMiddleware(rootEpic);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
-  applyMiddleware(routesMiddleware, epicMiddleware), enhancer
+  enhancer, applyMiddleware(epicMiddleware, routesMiddleware)
 )
 
 const store = createStore(

@@ -2,5 +2,8 @@ import React from 'react';
 // import './style.css';
 
 export default props => (
-  <div> BLOG </div>
+  <div>
+    <h1> BLOG </h1>
+    <div> Coming soon!</div>
+  </div>
 )
