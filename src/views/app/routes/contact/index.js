@@ -3,6 +3,6 @@ import React from 'react';
 
 export default props => (
   <div>
-    tmbradio@gmail.com
+    takemebackradio@gmail.com
   </div>
 )

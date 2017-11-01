@@ -5,15 +5,23 @@ import createHistory from 'history/createBrowserHistory'
 // import fetchEpisodes from '../episode/actions.js';
 
 const routesMap = {
-  "ROUTE_HOME": '/',
+  "ROUTE_HOME": '/HOME',
   "ROUTE_EPISODES" : {
-    path: '/EPISODES',
+    path: ['/EPISODES','/'],
     thunk: async dispatch=>{
       const response = await fetch('https://19wjbdak7f.execute-api.us-east-1.amazonaws.com/Develop/episodes');
       const episodes = await response.json();
       dispatch({type: "FETCH_EPISODES_FULFILLED", payload: episodes});
     },
   },
+  // "ROUTE_EPISODE": {
+  //   path: '/EPISODES/:EPISODE_ID',
+  //   thunk: async dispatch=>{
+  //     const response = await fetch('https://19wjbdak7f.execute-api.us-east-1.amazonaws.com/Develop/episodes');
+  //     const episodes = await response.json();
+  //     dispatch({type: "FETCH_EPISODE_FULFILLED", payload: episodes});
+  //   },
+  // },
   "ROUTE_BLOG" : '/BLOG',
   "ROUTE_ABOUT" : '/ABOUT',
   "ROUTE_CONTACT" : '/CONTACT',

@@ -5,23 +5,22 @@ import { connect } from 'react-redux';
 // import { PLAY, SET_SONG } from '../../../../store/player/actions';
 
 const Episodes = props => (
-  <div>
-    <h1>EPISODES</h1>
-    {props.episodes.map(episode=>{
-      return(
-        <div className="episode"
-          onClick={()=>props.setSong({url: episode.url.S})}
-          key={episode.episode_id.S}>
-          <h3>
-            {episode.episode_id.S}
-          </h3>
-          <div>{episode.description.S}</div>
-          <div>
-            Play Now!
+  <div className="episode_container">
+    <div className="episode_header">EPISODES</div>
+    <div className="episode_list">
+      {props.episodes.map(episode=>{
+        return(
+          <div className="episode"
+            onClick={()=>props.setSong({url: episode.url.S})}
+            key={episode.episode_id.S}>
+            <div className="episode_title">
+              {episode.time.S}: {episode.place.S}
+            </div>
+            <div>{episode.description.S}</div>
           </div>
-        </div>
-      )
-    })}
+        )
+      })}
+    </div>
   </div>
 )
 const stateToProps = state => state;

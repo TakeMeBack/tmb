@@ -1,3 +1,26 @@
+.episode_header {
+  font-size: 24px;
+}
+
+.episode_list {
+  max-width: 900px;
+  padding-top: 30px;
+  margin: auto;
+}
+
+.episode {
+  background-color: #9A9A9A;
+  border-radius: 5px;
+  width: 400px;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .episode:hover {
   cursor: pointer;
+}
+
+.episode_title {
+  font-size: 18px;
 }
