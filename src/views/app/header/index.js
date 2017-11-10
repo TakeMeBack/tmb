@@ -9,7 +9,7 @@ export default props => {
       <div className="links">
         <Link to="/episodes" className="link">EPISODES</Link>
         <Link to="/blog" className="link">BLOG</Link>
-        <Link to="/home" className="link">TAKE ME BACK!</Link>
+        <Link to="/" className="link">TAKE ME BACK!</Link>
         <Link to="/about" className="link">ABOUT</Link>
         <Link to="/contact" className="link">CONTACT</Link>
       </div>
