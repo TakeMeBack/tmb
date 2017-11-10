@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 import { connect } from 'react-redux';
 
-// import { PLAY, SET_SONG } from '../../../../store/player/actions';
 
 const Episodes = props => (
   <div className="episode_container">
@@ -28,7 +27,6 @@ const stateToProps = state => state;
 const dispatchToProps = dispatch => {
     return {
       setSong: payload => dispatch({type:"SET_SONG", payload}),
-      // play: () => dispatch({type:"PLAY"})
     }
 }
 

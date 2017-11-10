@@ -1,16 +1,27 @@
 import React from 'react';
-import Link from 'redux-first-router-link';
+import { connect } from 'react-redux';
+import parseLinks from '../../../../utils/parseLinks';
 // import './style.css';
 
-export default props => (
-  <div>
-    <h1>Take Me Back Radio</h1>
-    <h3>{"a sonic journey through time and space".toUpperCase()}</h3>
+const Home = props => {
+  const TITLE = props.page_data.home? props.page_data.home.Title.S : "";
+  const TAG = props.page_data.home? props.page_data.home.Tag.S : "";
+  const P1 = props.page_data.home? parseLinks(props.page_data.home.P1.S) : "";
+  return(
     <div>
-      This website is currently under construction,
-      but in the meantime check out the
-      {' '}<Link to="/episodes">episodes page</Link>{' '}
-      to hear our most recent show!
+      <h1>{TITLE}</h1>
+      <h3>{TAG}</h3>
+      <div>{P1}</div>
     </div>
-  </div>
-)
+)}
+
+
+const stateToProps = state => state;
+
+const dispatchToProps = dispatch => {
+    return {
+      
+    }
+}
+
+export default connect(stateToProps, dispatchToProps)(Home);

@@ -4,6 +4,7 @@ import ping from './ping/reducer';
 import users from './user/reducer';
 import player from './player/reducer';
 import episodes from './episodes/reducer';
+import page_data from './page_data/reducer';
 
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
   ping,
   users,
   player,
-  episodes
+  episodes,
+  page_data
 });
