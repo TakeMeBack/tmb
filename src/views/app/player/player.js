@@ -8,30 +8,35 @@ class Player extends Component {
       percentPlayed: 0,
     }
   }
+
   componentDidMount() {
     this.audio = this.refs.audio;
   }
+
   componentWillReceiveProps(nextProps) {
-    if (nextProps.isPlaying !== this.props.isPlaying) {
-      if (nextProps.isPlaying){
-        setTimeout(()=> this.audio.play(), 0);
-        this._anim=this.animate();
-      } else {
-        this.audio.pause();
-        cancelAnimationFrame(this._anim);
-      }
+    if (nextProps.isPlaying){
+      setTimeout(()=> this.audio.play(), 0);
+      this._anim=this.animate();
+    } else {
+      this.audio.pause();
+      cancelAnimationFrame(this._anim);
     }
   }
+
   togglePlay(){
     this.props.isPlaying ? this.props.pressPause(): this.props.pressPlay();
   }
+
   timeTravel(event) {
-    this.audio.currentTime = event.target.value * this.audio.duration / 100;
+    this.audio.currentTime = event.target.value * this.audio.duration / 10000;
   }
 
   animate() {
     const { currentTime, duration } = this.audio;
-    this.setState({ percentPlayed: currentTime / duration * 100});
+    this.setState({ 
+      currentTime,
+      duration,
+    });
     this._anim=requestAnimationFrame(this.animate.bind(this));
   }
 
@@ -42,16 +47,34 @@ class Player extends Component {
         <button className="play" onClick={this.togglePlay.bind(this)}>
           {this.props.isPlaying ? "pause" : "play"}
         </button>
-        <div className="info">
-          <input type="range" min="0" max="100" 
-            value={this.state.percentPlayed}
+        <div className="player-info">
+          <input type="range" min="0" max="10000" 
+            value={this._getPercentPlayed(this.state) || 0}
             onChange={e=>this.timeTravel(e)}/>
+          <div className="player-clock">
+            {this._formatTime(this.state.currentTime)} / {this._formatTime(this.state.duration)}
+          </div>
         </div>
         <audio ref="audio" src={this.props.src}></audio>
         {/* <button className="">volume</button> */}
         {/* <button className="fforward">fforward</button>         */}
       </div>
     );
+  }
+
+  _getPercentPlayed(state) {
+    return state.currentTime / state.duration * 10000;
+  }
+
+  _formatTime(seconds) {
+    if (!seconds) return "00:00:00";
+    let hh = new String(Math.floor(seconds / 3600));
+    while (hh.length < 2)  hh = "0" + hh;
+    let mm = new String(Math.floor(seconds / 60) % 60);
+    while (mm.length < 2)  mm = "0" + mm;
+    let ss = new String(Math.floor(seconds) % 60 % 60);
+    while (ss.length < 2)  ss = "0" + ss;
+    return `${hh}:${mm}:${ss}`;
   }
 }
 

@@ -8,6 +8,16 @@
   flex-direction: row;
 }
 
+.player-info input {
+  margin-left: 10px;  
+  margin-right: 10px;
+  width: 250px;
+}
+
 .playgray {
   color: gray;
+}
+
+.player-clock {
+  display: inline-block;
 }
