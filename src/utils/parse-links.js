@@ -4,7 +4,7 @@ import Link from 'redux-first-router-link';
 export default str => {
   const strs = [];
   const links = [];
-  const traverse = text => {
+  const traverseLinks = text => {
     let splitText = text.split("<Link to='");
     if (splitText.length < 2) {
       strs.push(text)
@@ -19,9 +19,11 @@ export default str => {
       linkTo,
       linkText
     });
-    return traverse(splitText[1]);
+    return traverseLinks(splitText[1]);
   }
-  traverse(str);
+
+  traverseLinks(str);
+  
   return strs.reduce((a,c,i)=>{
     a.push(c);
     if (links[i]){
