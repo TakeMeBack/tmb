@@ -1,19 +1,19 @@
 import React from 'react';
 import Link from 'redux-first-router-link';
 import Player from '../player/container.js';
-import './style.css';
+import style from './style.css';
 
 export default props => {
   return(
-    <div className="header">
-      <div className="links">
-        <Link to="/" className="link">HOME</Link>
-        <Link to="/episodes" className="link">EPISODES</Link>
-        <Link to="/blog" className="link">BLOG</Link>
-        <Link to="/about" className="link">ABOUT</Link>
-        <Link to="/contact" className="link">CONTACT</Link>
+    <div className={style.header}>
+      <div className={style.links}>
+        <Link to="/" className={style.link}>HOME</Link>
+        <Link to="/episodes" className={style.link}>EPISODES</Link>
+        <Link to="/blog" className={style.link}>BLOG</Link>
+        <Link to="/about" className={style.link}>ABOUT</Link>
+        <Link to="/contact" className={style.link}>CONTACT</Link>
       </div>
-      <div className="player">
+      <div className={style.player}>
         <Player />
       </div>
     </div>

@@ -1,18 +1,18 @@
 import React from 'react';
-import './style.css';
+import style from './style.css';
 import { connect } from 'react-redux';
 
 
 const Episodes = props => (
-  <div className="episode_container">
-    <div className="episode_header">EPISODES</div>
-    <div className="episode_list">
+  <div className={style.container}>
+    <div className={style.header}>EPISODES</div>
+    <div className={style.list}>
       {props.episodes.map(episode=>{
         return(
-          <div className="episode"
+          <div className={style.episode}
             onClick={()=>props.setSong({url: episode.url.S})}
             key={episode.episode_id.S}>
-            <div className="episode_title">
+            <div className={style.title}>
               {episode.time.S}: {episode.place.S}
             </div>
             <div>{episode.description.S}</div>

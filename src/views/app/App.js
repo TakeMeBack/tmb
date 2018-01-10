@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Footer from './footer';
 import Header from './header';
 import Routes from './routes';
-import './style.css';
+import style from './style.css';
 
 import { PING, PONG } from '../../store/ping/actions';
 
@@ -13,9 +13,9 @@ class App extends Component {
   // }
   render() {
     return (
-      <div className="App">
+      <div className={style.app}>
         <div>
-          <div className="App_content">
+          <div className={style.content}>
             <Header />
             {/* <button onClick={()=>console.log(this.props)}>props</button> */}
             <Routes/>

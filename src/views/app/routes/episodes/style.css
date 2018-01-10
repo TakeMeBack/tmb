@@ -1,8 +1,8 @@
-.episode_header {
+.header {
   font-size: 24px;
 }
 
-.episode_list {
+.list {
   max-width: 900px;
   padding-top: 30px;
   margin: auto;
@@ -22,6 +22,6 @@
   cursor: pointer;
 }
 
-.episode_title {
+.title {
   font-size: 18px;
 }

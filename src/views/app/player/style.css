@@ -1,4 +1,4 @@
-.player .disable {
+.player_disable {
   opacity: 0;
 }
 
@@ -8,7 +8,7 @@
   flex-direction: row;
 }
 
-.player-info input {
+.player_info input {
   margin-left: 10px;  
   margin-right: 10px;
   width: 250px;
@@ -18,6 +18,6 @@
   color: gray;
 }
 
-.player-clock {
+.player_clock {
   display: inline-block;
 }
