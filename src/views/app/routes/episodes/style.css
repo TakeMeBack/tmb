@@ -1,0 +1,38 @@
+.header {
+  font-size: 24px;
+}
+
+.list {
+  max-width: 900px;
+  padding-top: 30px;
+  margin: auto;
+}
+
+.episode {
+  background-color: black;
+  background-image: URL(
+    "https://s3.us-east-2.amazonaws.com/takemebackradio.com/public/assets/tmb_logo_no_text.png"
+  );
+  background-blend-mode: screen;
+  background-size: cover;
+  color: white;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  font-weight: 200;
+}
+
+.episode:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 22px;
+}

@@ -1,7 +1,7 @@
-import actions from '../actions';
+import XNS from '../XNS';
 
-const fetchUser = username => actions._create("FETCH_USER", username);
-const fetchUserFulfilled = payload => actions._create("FETCH_USER_FULFILLED", payload);
+const fetchUser = username => XNS._create("FETCH_USER", username);
+const fetchUserFulfilled = payload => XNS._create("FETCH_USER_FULFILLED", payload);
 
 export default {
   fetchUser,

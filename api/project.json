@@ -1,0 +1,8 @@
+{
+  "name": "take-me-back",
+  "description": "take me back radio",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::123205736612:role/take-me-back_lambda_function",
+  "environment": {}
+}
