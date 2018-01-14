@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import style from './style.css';
 
 class Player extends Component {
   constructor(props) {
@@ -42,22 +42,24 @@ class Player extends Component {
 
   render() {
     return (
-      <div className={this.props.src ? "player" : "player disable"}>
-        {/* <button className="reverse">reverse</button> */}
-        <button className="play" onClick={this.togglePlay.bind(this)}>
-          {this.props.isPlaying ? "pause" : "play"}
-        </button>
-        <div className="player-info">
-          <input type="range" min="0" max="10000" 
-            value={this._getPercentPlayed(this.state) || 0}
-            onChange={e=>this.timeTravel(e)}/>
-          <div className="player-clock">
-            {this._formatTime(this.state.currentTime)} / {this._formatTime(this.state.duration)}
+      <div className={this.props.src ? style.container : style.container_disable}>
+        <div className={this.props.src ? style.player : style.player_disable}>
+          {/* <button className={style.rev}>reverse</button> */}
+          <button className={style.play} onClick={this.togglePlay.bind(this)}>
+            {this.props.isPlaying ? "pause" : "play"}
+          </button>
+          <div className={style.player_info}>
+            <input type="range" min="0" max="10000" 
+              value={this._getPercentPlayed(this.state) || 0}
+              onChange={e=>this.timeTravel(e)}/>
+            <div className={style.player_clock}>
+              {this._formatTime(this.state.currentTime)} / {this._formatTime(this.state.duration)}
+            </div>
           </div>
+          <audio ref="audio" src={this.props.src}></audio>
+          {/* <button className={style.vol}>volume</button> */}
+          {/* <button className={style.fwd}>fforward</button>         */}
         </div>
-        <audio ref="audio" src={this.props.src}></audio>
-        {/* <button className="">volume</button> */}
-        {/* <button className="fforward">fforward</button>         */}
       </div>
     );
   }

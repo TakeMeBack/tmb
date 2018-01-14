@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Player from './player';
-import { PLAY, PAUSE } from '../../../store/player/actions';
+import { PLAY, PAUSE } from 'store/player/actions';
 
 const stateToProps = state => state.player;
 

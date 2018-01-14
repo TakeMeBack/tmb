@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import parseLinks from '../../../../utils/parseLinks';
+import parseLinks from 'utils/parse-links';
 // import './style.css';
 
 const Home = props => {

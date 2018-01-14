@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.css';
+import style from './style.css';
 
 export default props => (
-  <div className="footer"> website under construction </div>
+  <div className={style.footer}> website under construction </div>
 )
