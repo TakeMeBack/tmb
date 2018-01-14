@@ -1,11 +1,22 @@
-.player_disable {
+.container {
+  background-color: black;
+  transition: opacity 1s;
+}
+
+.container_disable {
   opacity: 0;
 }
 
 .player {
-  transition: opacity 2s;
   display: flex;
   flex-direction: row;
+  color: white;
+  margin: auto;
+  width: 500px;
+}
+
+.play {
+  width: 50px;
 }
 
 .player_info input {

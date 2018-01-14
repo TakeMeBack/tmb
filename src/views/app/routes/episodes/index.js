@@ -15,6 +15,7 @@ const Episodes = props => (
             <div className={style.title}>
               {episode.time.S}: {episode.place.S}
             </div>
+            <br/>
             <div>{episode.description.S}</div>
           </div>
         )
