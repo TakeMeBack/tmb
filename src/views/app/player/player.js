@@ -60,6 +60,9 @@ class Player extends Component {
           {/* <button className={style.vol}>volume</button> */}
           {/* <button className={style.fwd}>fforward</button>         */}
         </div>
+        <div className={style.info}>
+          Now playing - {this.props.title}
+        </div>
       </div>
     );
   }

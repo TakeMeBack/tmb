@@ -1,6 +1,7 @@
 .container {
   background-color: black;
   transition: opacity 1s;
+  padding-bottom: 10px;
 }
 
 .container_disable {
@@ -23,6 +24,7 @@
   margin-left: 10px;  
   margin-right: 10px;
   width: 250px;
+  background-color: white;
 }
 
 .playgray {
@@ -31,4 +33,8 @@
 
 .player_clock {
   display: inline-block;
+}
+
+.info {
+  color: white;
 }
