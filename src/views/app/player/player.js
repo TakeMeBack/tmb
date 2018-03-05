@@ -73,11 +73,11 @@ class Player extends Component {
 
   _formatTime(seconds) {
     if (!seconds) return "00:00:00";
-    let hh = new String(Math.floor(seconds / 3600));
+    let hh = ""+(Math.floor(seconds / 3600));
     while (hh.length < 2)  hh = "0" + hh;
-    let mm = new String(Math.floor(seconds / 60) % 60);
+    let mm = ""+(Math.floor(seconds / 60) % 60);
     while (mm.length < 2)  mm = "0" + mm;
-    let ss = new String(Math.floor(seconds) % 60 % 60);
+    let ss = ""+(Math.floor(seconds) % 60 % 60);
     while (ss.length < 2)  ss = "0" + ss;
     return `${hh}:${mm}:${ss}`;
   }
