@@ -5,8 +5,6 @@ import Header from './header';
 import Routes from './routes';
 import style from './style.css';
 
-import { PING, PONG } from '../../store/ping/actions';
-
 class App extends Component {
   // constructor(props) {
   //   super(props);
@@ -31,8 +29,6 @@ const stateToProps = state => state;
 
 const dispatchToProps = dispatch => {
    return {
-     makePing: () => {dispatch(PING)},
-     makePong: () => {dispatch(PONG)},
    }
 }
 

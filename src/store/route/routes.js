@@ -1,4 +1,3 @@
-import XNS from '../XNS'
 import {connectRoutes} from 'redux-first-router'
 import createHistory from 'history/createBrowserHistory'
 
@@ -29,8 +28,15 @@ const routesMap = {
   //     dispatch({type: "FETCH_EPISODE_FULFILLED", payload: episodes});
   //   },
   // },
-  "ROUTE_BLOG" : '/BLOG',
-  "ROUTE_ABOUT" : '/ABOUT',
+  "ROUTE_PORTFOLIO" : '/PORTFOLIO',
+  "ROUTE_ABOUT" : {
+    path: '/ABOUT',
+    thunk: async dispatch=>{
+      const response = await fetch('https://19wjbdak7f.execute-api.us-east-1.amazonaws.com/Develop/about');
+      const about_data = await response.json();
+      dispatch({type: "FETCH_ABOUT_DATA_FULFILLED", payload: about_data});
+    },
+  },
   "ROUTE_CONTACT" : '/CONTACT',
   "ROUTE_ADMIN" : '/ADMIN',
 };

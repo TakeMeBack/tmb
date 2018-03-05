@@ -13,8 +13,8 @@ export default props => {
           <img src={BASE_URL+"tmb_banner.jpg"}/>
         </Link>
         <Link to="/episodes" className={style.link}>EPISODES</Link>
-        <Link to="/blog" className={style.link}>BLOG</Link>
         <Link to="/about" className={style.link}>ABOUT</Link>
+        <Link to="/portfolio" className={style.link}>SAM'S PORTFOLIO</Link>
         <Link to="/contact" className={style.link}>CONTACT</Link>
       </div>
       <div className={style.player}>

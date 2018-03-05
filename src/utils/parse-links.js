@@ -11,19 +11,18 @@ export default str => {
       return
     };
     strs.push(splitText[0]);
-    splitText = splitText[1].split("'>");
+    splitText = splitText.slice(1).join("<Link to='").split("'>");
     let linkTo = splitText[0];
-    splitText = splitText[1].split("</Link>");
+    splitText = splitText.slice(1).join("'>").split("</Link>");
     let linkText = splitText[0];
     links.push({
       linkTo,
       linkText
     });
-    return traverseLinks(splitText[1]);
+    return traverseLinks(splitText.slice(1).join("</Link>"));
   }
 
   traverseLinks(str);
-  
   return strs.reduce((a,c,i)=>{
     a.push(c);
     if (links[i]){

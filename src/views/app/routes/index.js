@@ -4,7 +4,7 @@ import {NOT_FOUND} from 'redux-first-router';
 
 import Home from './home';
 import Episodes from './episodes';
-import Blog from './blog';
+import Portfolio from './portfolio';
 import Contact from './contact';
 import Admin from './admin';
 import About from './about';
@@ -12,7 +12,7 @@ import About from './about';
 const routesMap = {
   "ROUTE_HOME": Home,
   "ROUTE_EPISODES": Episodes,
-  "ROUTE_BLOG": Blog,
+  "ROUTE_PORTFOLIO": Portfolio,
   "ROUTE_ABOUT": About,
   "ROUTE_CONTACT": Contact,
   "ROUTE_ADMIN": Admin,
