@@ -17,7 +17,8 @@ export default (state = defaultState, action) => {
       return { 
         ...state, 
         isPlaying: true,
-        src: action.payload.url
+        src: action.payload.url,
+        title: action.payload.title
       };
     default:
       return state;

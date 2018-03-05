@@ -10,7 +10,10 @@ const Episodes = props => (
       {props.episodes.map(episode=>{
         return(
           <div className={style.episode}
-            onClick={()=>props.setSong({url: episode.url.S})}
+            onClick={()=>props.setSong({
+              url: episode.url.S,
+              title: `${episode.time.S}: ${episode.place.S}`
+            })}
             key={episode.episode_id.S}>
             <div className={style.title}>
               {episode.time.S}: {episode.place.S}
