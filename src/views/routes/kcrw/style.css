@@ -1,0 +1,30 @@
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.back {
+  display: block;
+  float: left;
+}
+
+.info {
+  width: 50%;
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+}
+
+.section {
+  max-width: 200px;
+  padding-top: 10px;
+}

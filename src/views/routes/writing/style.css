@@ -1,8 +1,16 @@
-.links {
+.container {
   width: 90%;
   max-width: 800px;
+  margin: auto;
+}
+
+.links {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: auto;
+}
+
+.section {
+  max-width: 200px;
 }

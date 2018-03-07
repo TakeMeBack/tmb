@@ -8,6 +8,11 @@ import Portfolio from './portfolio';
 import Contact from './contact';
 import Admin from './admin';
 import About from './about';
+import Writing from './writing';
+import Reporting from './reporting';
+import Hosting from './hosting';
+import Kcrw from './kcrw';
+import SelectedWorks from './selected-works';
 
 const routesMap = {
   "ROUTE_HOME": Home,
@@ -16,6 +21,11 @@ const routesMap = {
   "ROUTE_ABOUT": About,
   "ROUTE_CONTACT": Contact,
   "ROUTE_ADMIN": Admin,
+  "ROUTE_WRITING": Writing,
+  "ROUTE_REPORTING": Reporting,
+  "ROUTE_HOSTING": Hosting,
+  "ROUTE_KCRW": Kcrw,
+  "ROUTE_SELECTED-WORKS": SelectedWorks,
   [NOT_FOUND]: Home
 };
 
